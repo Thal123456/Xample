@@ -7,6 +7,7 @@ include 'php/connection.php';
 <?php include 'includes/head.php'; ?>
 
 <body>
+    <div>HELLO WORLD</div>
     <?php include 'includes/sidebar.php'; ?>
     <div id="main-content">
         <?php include 'includes/header.php'; ?>
@@ -210,7 +211,7 @@ include 'php/connection.php';
                     <div class="facility_statistics">
                         <div class="head">
                             <h4>Facility Statistics</h4>
-                           
+
                         </div>
                         <canvas id="facilityStatsChart"></canvas>
                     </div>
@@ -313,45 +314,45 @@ include 'php/connection.php';
                     type: 'bar',
                     data: {
                         labels: <?php echo json_encode($roomDaysOfWeek); ?>,
-                        datasets: [{
-                            label: 'Occupied Rooms',
-                            data: <?php echo json_encode($occupiedRooms); ?>,
-                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
+                    datasets: [{
+                        label: 'Occupied Rooms',
+                        data: <?php echo json_encode($occupiedRooms); ?>,
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
                         }, {
-                            label: 'Total Check-ins',
-                            data: <?php echo json_encode($roomTotalGuests); ?>,
-                            backgroundColor: 'rgba(255, 159, 64, 0.6)',
-                            borderColor: 'rgba(255, 159, 64, 1)',
-                            borderWidth: 1
+                    label: 'Total Check-ins',
+                    data: <?php echo json_encode($roomTotalGuests); ?>,
+                    backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
                         }]
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Count'
-                                }
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Day of Week'
-                                }
-                            }
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Room Reservations - Week of <?php echo $weekAgo; ?> to <?php echo $today; ?>'
-                            }
+                options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Day of Week'
                         }
                     }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Room Reservations - Week of <?php echo $weekAgo; ?> to <?php echo $today; ?>'
+                    }
+                }
+            }
                 });
             });
         </script>
@@ -364,45 +365,45 @@ include 'php/connection.php';
                     type: 'bar',
                     data: {
                         labels: <?php echo json_encode($facilityDaysOfWeek); ?>,
-                        datasets: [{
-                            label: 'Reserved Facilities',
-                            data: <?php echo json_encode($reservedFacilities); ?>,
-                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
+                    datasets: [{
+                        label: 'Reserved Facilities',
+                        data: <?php echo json_encode($reservedFacilities); ?>,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
                         }, {
-                            label: 'Total Guests',
-                            data: <?php echo json_encode($facilityTotalGuests); ?>,
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
+                    label: 'Total Guests',
+                    data: <?php echo json_encode($facilityTotalGuests); ?>,
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
                         }]
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Count'
-                                }
-                            },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Day of Week'
-                                }
-                            }
-                        },
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Facility Reservations - Week of <?php echo $weekAgo; ?> to <?php echo $today; ?>'
-                            }
+                options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Day of Week'
                         }
                     }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Facility Reservations - Week of <?php echo $weekAgo; ?> to <?php echo $today; ?>'
+                    }
+                }
+            }
                 });
             });
         </script>
